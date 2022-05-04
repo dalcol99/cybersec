@@ -23,8 +23,8 @@ lisnomx.remove('interpol')
 lisnomf = '(% s)' % ')|('.join(lisnomx)
 
 ###Iniciado função para execução do programa principal
-def main():  
-    html_temp = """ ###Formatação da interface em HTML
+def main():  ###Formatação da interface em HTML
+    html_temp = """ 
     <div style ="background-color:blue;padding:15px"> 
     <h1 style ="color:white;text-align:center;">Checagem de Imigração</h1> 
     </div> 
