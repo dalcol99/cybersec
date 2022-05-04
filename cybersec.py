@@ -52,13 +52,13 @@ def main():  ###Formatação da interface em HTML
             result.append(text)
       if len(result) == 0:
           return st.success('Pode entrar no país') and st.balloons()  ###Definido sucesso, liberado entrada no país
-      return st.error('Não pode entrar no país') ###Proibido entrada do indivíduo no país, NOME consta em lista proibida (segunda checagem pelo FuzzyWuzzy)
+      return st.error('Nome suspeito. Necessita documentação complementar.') ###Nome suspeito, NOME consta em lista proibida (segunda checagem pelo FuzzyWuzzy)
 
     ###Função para checar input através de RegEx
     def checknom(field):
       match = re.search(f'(?i){lisnomf}', field.lower())
       if match:
-        st.error('Não pode entrar no país') ###Proibido entrada do indivíduo no país, NOME consta em lista proibida (primeira checagem pelo RegEx)
+        st.error('Nome suspeito. Necessita documentação complementar.') ###Nome suspeito, NOME consta em lista proibida (primeira checagem pelo RegEx)
       else:
         checkfuzzy(field) ###Encaminha para função de segunda checagem com FuzzyWuzzy (maior sensibilidade, menor especificidade)
 
